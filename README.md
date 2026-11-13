@@ -17,7 +17,9 @@ npm run build
 npm run preview
 ```
 
-The build checks TypeScript, then creates `dist/`. Use Node 22.12+ (Node 22 is used in CI), or Node 20.19+. The architecture follows KNIT, with current patched Vite and React Router versions. An older system Node 18 installation must be updated or replaced with a separate supported runtime before running this project.
+The build checks TypeScript, then creates `dist/`. The project pins Node 22 as a development dependency. After `npm install`, npm scripts automatically use that local runtime, so `npm start`, `npm run dev`, `npm run build`, and `npm run preview` work even when your system Node is 18.16.0. No global Node change or custom PATH is needed. The architecture follows KNIT, with patched Vite and React Router versions.
+
+Node 22 is also used in CI. Installing dependencies with system Node 18 may print engine warnings for Vite and React Router; the installed project-local Node 22 is what runs those tools. Install development dependencies normally (do not use `--omit=dev` or `--ignore-scripts` for local development).
 
 ## Structure
 
