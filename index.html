@@ -1,9 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f8f8f5" />
+    <meta name="theme-color" content="#111315" />
+    <script>
+      // Apply a saved preference before the first paint. Otherwise use dark.
+      try {
+        if (localStorage.getItem('portfolio-theme') === 'light') {
+          document.documentElement.dataset.theme = 'light';
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#F7F8F6');
+        }
+      } catch {
+        // Dark remains the default when browser storage is unavailable.
+      }
+    </script>
     <meta name="description" content="Xintong Tan — UI/UX Developer & UI Engineer focused on enterprise SaaS, design systems, and thoughtful React experiences." />
     <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
     <title>Xintong Tan — UI/UX Developer & UI Engineer</title>

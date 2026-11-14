@@ -57,7 +57,7 @@ public/
 - Update the three case studies in `src/data/projects.ts`. All projects use the same `ProjectDetail` layout.
 - Replace local SVG placeholders in `public/images/` with your own screenshots, then update the image filenames and alt text.
 - Replace the sample experience and education in `src/pages/Resume.tsx`. The Print / Save PDF button uses the browser print dialog and a dedicated print stylesheet.
-- Adjust colors, typography, and spacing in `src/styles.css`. DM Sans and Instrument Serif load through Google Fonts, with system and Georgia fallbacks if unavailable.
+- Adjust semantic theme tokens, typography, and spacing in `src/styles.css`. DM Sans is the only web font, with system sans-serif fallbacks. Dark is the default; the header toggle saves an explicit light/dark preference in local storage. The small initialization script in `index.html` applies a saved preference before the first paint. Theme switching still works if storage is unavailable.
 
 Case-study narratives, previews, resume experience, and education are explicitly placeholders. No employers, metrics, or achievements are asserted by those sample sections.
 
