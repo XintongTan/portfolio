@@ -7,6 +7,8 @@ export default function ProjectDetail() {
   const index = projects.findIndex((item) => item.slug === slug);
   if (index === -1) return <NotFound />;
   const project = projects[index];
+  const image = project.screenshot ?? project.image;
+  const imageAlt = project.screenshot ? (project.screenshotAlt ?? `${project.title} interface screenshot`) : project.imageAlt;
   const nextProject = projects[(index + 1) % projects.length];
 
   return (
@@ -15,10 +17,10 @@ export default function ProjectDetail() {
       <header className="case-header">
         <p className="eyebrow">{project.category}</p>
         <h1>{project.title}</h1>
-        <p className="case-headline serif">{project.headline}</p>
-        <p className="placeholder-note"><span className="accent-dot" aria-hidden="true" /> Sample case study · Content and visuals are placeholders</p>
+        <p className="case-headline">{project.headline}</p>
+        <p className="placeholder-note">Case study draft · {project.screenshot ? 'Detailed narrative is placeholder content' : 'Detailed narrative and images are placeholders'}</p>
       </header>
-      <div className={`case-image project-image-${project.theme}`}><img src={`${import.meta.env.BASE_URL}images/${project.image}`} alt={project.imageAlt} width="1200" height="840" /></div>
+      <div className="case-image"><img src={`${import.meta.env.BASE_URL}images/${image}`} alt={imageAlt} width="1200" height="840" /></div>
       <dl className="case-meta"><div><dt>Role / concept</dt><dd>{project.role}</dd></div><div><dt>Focus</dt><dd>{project.focus}</dd></div><div><dt>Toolkit</dt><dd>{project.tools}</dd></div></dl>
       <section className="case-section"><p className="eyebrow">01 / Overview</p><div><h2>A little context.</h2><p>{project.overview}</p></div></section>
       <section className="case-section"><p className="eyebrow">02 / The challenge</p><div><h2>Finding the right focus.</h2><p>{project.challenge}</p></div></section>

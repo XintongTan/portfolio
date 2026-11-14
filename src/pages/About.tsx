@@ -4,7 +4,7 @@ import AboutSection from '../components/AboutSection';
 export default function About() {
   return (
     <div className="container inner-page">
-      <div className="page-intro"><p className="eyebrow">Behind the interface</p><h1>Design meets<br /><span className="serif">implementation.</span></h1><p className="page-lead">Thoughtful interfaces start with understanding people—and come to life in the details.</p></div>
+      <div className="page-intro"><h1>About Xintong Tan</h1><p className="page-lead">UI/UX Developer · UI Engineer</p></div>
       <AboutSection expanded />
       <section className="principles-section" aria-labelledby="principles-heading">
         <div className="section-heading"><h2 id="principles-heading">How I approach the work</h2></div>

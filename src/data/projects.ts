@@ -3,6 +3,9 @@ export interface Project {
   title: string;
   category: string;
   summary: string;
+  status: 'In Progress' | 'Client Project';
+  screenshot?: string;
+  screenshotAlt?: string;
   theme: 'system' | 'tower' | 'portal';
   image: string;
   imageAlt: string;
@@ -16,13 +19,16 @@ export interface Project {
   reflection: string;
 }
 
-// Placeholder case studies: replace with verified project details before using as final work samples.
+// Summaries and status are supplied portfolio copy. Detailed case-study narratives
+// and image/imageAlt remain placeholders. Set screenshot and screenshotAlt only
+// after real project screenshots are provided in public/images/.
 export const projects: Project[] = [
   {
     slug: 'enterprise-design-system',
     title: 'Enterprise Design System',
-    category: 'Design systems · UI engineering',
-    summary: 'A shared visual language for complex products, built one thoughtful component at a time.',
+    category: 'Design Systems · Figma · React · TypeScript',
+    summary: 'Creating a consistent design foundation for enterprise applications through semantic tokens, reusable components, and light/dark theming.',
+    status: 'In Progress',
     theme: 'system',
     image: 'design-system.svg',
     imageAlt: 'Illustrative design system board showing typography, color tokens, buttons, and a reusable form component.',
@@ -42,8 +48,9 @@ export const projects: Project[] = [
   {
     slug: 'wip-control-tower',
     title: 'WIP Control Tower',
-    category: 'Enterprise SaaS · Workflow design',
-    summary: 'Bringing clarity to work in progress with a focused, connected view of production.',
+    category: 'Enterprise SaaS · Interaction Design · React',
+    summary: 'Designing and implementing production management interfaces that help teams track work orders, manage production stages, and navigate complex workflows.',
+    status: 'Client Project',
     theme: 'tower',
     image: 'control-tower.svg',
     imageAlt: 'Illustrative production dashboard with stage filters, a work-in-progress chart, and an order table.',
@@ -63,8 +70,9 @@ export const projects: Project[] = [
   {
     slug: 'b2b-customer-portal',
     title: 'B2B Customer Portal',
-    category: 'Product design · Frontend development',
-    summary: 'A considered self-service experience that makes business purchasing feel effortless.',
+    category: 'Product Design · Frontend Development · React',
+    summary: 'Building a self-service purchasing experience with configurable products, shopping carts, and an ERP-integrated checkout process.',
+    status: 'Client Project',
     theme: 'portal',
     image: 'customer-portal.svg',
     imageAlt: 'Illustrative customer portal with product photography placeholders, an order overview, and a product catalog.',

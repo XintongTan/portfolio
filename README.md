@@ -36,6 +36,8 @@ src/
     Footer.tsx
     ProjectCard.tsx
     AboutSection.tsx
+    SkillGroups.tsx
+    ThemeToggle.tsx
   pages/
     Home.tsx
     About.tsx
@@ -53,13 +55,13 @@ public/
 
 ## Edit content
 
-- Update contact information and skills in `src/data/profile.ts`.
+- Update contact information, hero copy, expertise, grouped skills, experience, and education in `src/data/profile.ts`. The LinkedIn link is rendered only when the actual profile URL is supplied.
 - Update the three case studies in `src/data/projects.ts`. All projects use the same `ProjectDetail` layout.
-- Replace local SVG placeholders in `public/images/` with your own screenshots, then update the image filenames and alt text.
-- Replace the sample experience and education in `src/pages/Resume.tsx`. The Print / Save PDF button uses the browser print dialog and a dedicated print stylesheet.
+- Put real project screenshots in `public/images/`, then set the optional `screenshot` filename and `screenshotAlt` in each project. Home and project-detail pages use those fields when available; until then they explicitly identify the existing SVG artwork as illustrative placeholders. No reference-site imagery is used.
+- Home, About, and the printable Resume share the supplied profile data. The Print / Save PDF button uses the browser print dialog and a dedicated print stylesheet.
 - Adjust semantic theme tokens, typography, and spacing in `src/styles.css`. DM Sans is the only web font, with system sans-serif fallbacks. Dark is the default; the header toggle saves an explicit light/dark preference in local storage. The small initialization script in `index.html` applies a saved preference before the first paint. Theme switching still works if storage is unavailable.
 
-Case-study narratives, previews, resume experience, and education are explicitly placeholders. No employers, metrics, or achievements are asserted by those sample sections.
+Project summaries/status, biography, employment, and education use user-supplied content. Detailed case-study narratives and the three SVG previews remain placeholders until real material is provided.
 
 ## GitHub Pages
 
@@ -71,7 +73,7 @@ Routes:
 
 - `/#/` — Work and About summary
 - `/#/about` — About and skills
-- `/#/resume` — Printable placeholder resume
+- `/#/resume` — Printable resume
 - `/#/work/enterprise-design-system`
 - `/#/work/wip-control-tower`
 - `/#/work/b2b-customer-portal`

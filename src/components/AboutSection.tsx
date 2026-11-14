@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom';
-import { skills } from '../data/profile';
+import SkillGroups from './SkillGroups';
 
 export default function AboutSection({ expanded = false }: { expanded?: boolean }) {
   return (
     <section className={`about-section${expanded ? ' about-expanded' : ''}`} aria-labelledby="about-heading">
-      <div className="about-heading"><p className="eyebrow">About</p></div>
+      <h2 id="about-heading" className="section-label">About</h2>
       <div className="about-body">
-        <h2 id="about-heading">Design and development, connected.</h2>
-        <p>I’m Xintong, a UI/UX Developer and UI Engineer working at the intersection of design and code. My focus is making complex enterprise software feel clear, consistent, and considered.</p>
-        <p>From a reusable component to an end-to-end workflow, I care about the details that make a product easier to use—and easier to build.</p>
-        {expanded && <p>I’m especially interested in enterprise SaaS, where thoughtful information architecture and well-built interfaces can bring clarity to everyday work. This portfolio is a starting point; project stories and final visuals will be added over time.</p>}
-        <ul className="skill-list" aria-label="Skills">{skills.map((skill) => <li key={skill}>{skill}</li>)}</ul>
-        {!expanded && <Link className="text-link" to="/about">More about me <span aria-hidden="true">↗</span></Link>}
+        <p>I'm a UI/UX Developer and UI Engineer based in Los Angeles.</p>
+        <p>With a background in design and hands-on frontend development, I enjoy working at the intersection of visual design, interaction, and engineering.</p>
+        <p>At DigitBridge, I've worked on enterprise applications including ERP systems, production management tools, and B2B customer portals. My work spans UI design in Figma, reusable component styling, frontend implementation, and complex business interactions.</p>
+        <p>I'm particularly interested in design systems, thoughtful interaction patterns, and bridging the gap between design and code.</p>
+        <h3 className="skills-heading">What I work with</h3>
+        <SkillGroups />
+        {!expanded && <Link className="text-link" to="/about">More about me</Link>}
       </div>
     </section>
   );
